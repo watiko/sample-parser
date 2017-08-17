@@ -1,7 +1,8 @@
-export abstract class Parser {
-  protected input: string;
+export abstract class AbstractParser {
   protected position: number = 0;
   private markers: number[] = [];
+
+  abstract parse(input: string): void;
 
   protected mark(): void {
     this.markers.push(this.position);

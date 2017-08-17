@@ -1,9 +1,10 @@
 import "mocha";
 import assert = require("power-assert");
 
-import { Parser } from './parser';
+import { AbstractParser } from './abstract-parser';
 
-class TestParser extends Parser {
+class TestParser extends AbstractParser {
+  parse(_: string): void { }
   set position(p: number) {
     super.position = p;
   }
@@ -14,7 +15,7 @@ class TestParser extends Parser {
   _release = super.release;
 }
 
-describe("Parser", ()=> {
+describe("AbstractParser", ()=> {
 
   it("markで保持した位置にreleaseで戻ること", () => {
     const p = new TestParser();
