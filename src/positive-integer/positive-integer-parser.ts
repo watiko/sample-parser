@@ -7,7 +7,7 @@ import { AbstractParser, ParseError } from '../parser';
  * nonZeroDigit    -> '1' | '2' | ... | '9'
 */
 export class PositiveIntegerParser extends AbstractParser {
-  private input: string;
+  private input!: string;
 
   private get currentChar(): string {
     return this.input[this.position];
